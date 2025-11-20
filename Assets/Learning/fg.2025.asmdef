@@ -4,7 +4,9 @@
     "references": [
         "Unity.InputSystem",
         "Unity.TextMeshPro",
-        "com.intothedev.savesystem"
+        "com.intothedev.savesystem",
+        "Unity.Addressables",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
