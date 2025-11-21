@@ -5,20 +5,20 @@ namespace Serialization.Save {
     public static class SaveSystem {
         private static string SavePath => Application.dataPath + "/save.json";
 
-        public static void Save(PlayerData data) {
+        public static void Save<T>(T data) {
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(SavePath, json);
             Debug.Log($"Game saved to {SavePath}");
         }
 
-        public static PlayerData Load() {
+        public static T Load<T>() {
             if(!File.Exists(SavePath)) {
                 Debug.LogWarning("No save file found!");
-                return null;
+                throw new FileNotFoundException();
             }
 
             string json = File.ReadAllText(SavePath);
-            PlayerData data = JsonUtility.FromJson<PlayerData>(json);
+            T data = JsonUtility.FromJson<T>(json);
             Debug.Log("Game loaded!");
             return data;
         }

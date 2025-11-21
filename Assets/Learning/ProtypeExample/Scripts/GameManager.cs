@@ -30,8 +30,7 @@ namespace Learning.Prototype {
             { Weapons.Rifle, 0 },
             { Weapons.RocketLauncher, 0 }
         };
-
-        public CameraControl cameraControl;
+        
         public Player player;
         public Enemy enemyPrefab;
         public GameObject bulletPrefab;
